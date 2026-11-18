@@ -306,6 +306,7 @@ def mt(dp, ply):
     global ND
     ND += 1
     if (ND & 2047) == 0 and ND > LM: raise Stop
+    if HS.get(KEY) or SN.get(KEY, 0) > 1: return 999
     ck = atk(KS[S], S == 1)
     ms = gen(False)
     if not ms: return 1 if S == 1 and ck else 999
