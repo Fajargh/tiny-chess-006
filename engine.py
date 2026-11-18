@@ -341,7 +341,7 @@ def pick(f, lu, nodes, gid=None):
         TT.clear()
     HS[KEY] = HS.get(KEY, 0) + 1
     e = evl() if S == 0 else -evl()
-    if e >= 600:
+    if e >= 600 and PH <= 6:
         LM = 15000
         ND = 0
         try:
