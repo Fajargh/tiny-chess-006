@@ -341,7 +341,9 @@ def pick(f, lu, nodes, gid=None):
         TT.clear()
     HS[KEY] = HS.get(KEY, 0) + 1
     e = evl() if S == 0 else -evl()
-    if e >= 600 and PH <= 6:
+    ek = KS[1]
+    edge = (ek & 7) in (0, 7) or (ek >> 4) in (0, 7)
+    if e >= 600 and PH <= 6 and edge:
         LM = 15000
         ND = 0
         try:
